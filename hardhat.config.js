@@ -1,5 +1,6 @@
 require("@nomicfoundation/hardhat-toolbox");
 require("dotenv").config();
+require("./task/block-number")
 require("@nomiclabs/hardhat-etherscan")
 
 /** @type import('hardhat/config').HardhatUserConfig */
@@ -13,7 +14,11 @@ module.exports = {
     rinkeby:{
       url:RINKBEY_RPC_URL,
       accounts:[PRIVATE_KEY],
-      chainId:4,
+      chainId:5,
+    },
+    localhost: {
+      url: "http://localhost:8545",
+      chainId: 31337,
     },
   },
   solidity: "0.8.17",
